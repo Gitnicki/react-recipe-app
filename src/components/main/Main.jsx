@@ -33,7 +33,7 @@ export default function Main() {
           {recipe.map(recipe => (
             <li className='p-2' key={recipe.id}>
               {/* Link zur Detailseite für jedes Rezept */}
-              <Link to={`/${recipe.id}`} className='border block bg-cyan-600'>
+              <Link to={`/${recipe.id}`} className='border block bg-gray-800 text-white'>
                 {recipe.name}
               </Link>
               {/* Bild des Rezepts */}
