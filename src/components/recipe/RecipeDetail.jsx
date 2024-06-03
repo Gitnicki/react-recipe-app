@@ -31,7 +31,7 @@ export default function RecipeDetail() {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="border flex-grow">
+    <div className="border flex-grow flex flex-col h-screen">
       <h2 className='text-3xl font-bold underline'>{recipe.name}</h2>
       <img src={recipe.image} alt={recipe.name} className="max-w-xs h-auto" />
       <h3 className='text-2xl font-bold underline'>Ingredients:</h3>

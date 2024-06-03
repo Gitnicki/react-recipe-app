@@ -18,30 +18,31 @@ export default function Main() {
       setLoading(false);
     }
   };
-  console.log(recipe);
 
   useEffect(() => {
     getRecipes();
   }, []);
 
   return (
-    <div className="border flex-grow">
+    <div className="container mx-auto p-4 flex flex-col h-screen">
       <div>
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-      <ul>
+        {loading && <p>Loading...</p>}
+        {error && <p>{error}</p>}
+        <ul className="flex flex-wrap justify-center">
           {recipe.map(recipe => (
-            <li className='p-2' key={recipe.id}>
-              {/* Link zur Detailseite für jedes Rezept */}
-              <Link to={`/${recipe.id}`} className='border block bg-gray-800 text-white'>
-                {recipe.name}
-              </Link>
-              {/* Bild des Rezepts */}
-              <img src={recipe.image} alt={recipe.name} className="max-w-xs h-auto" />
+            <li className='m-4' key={recipe.id}>
+              <div className="bg-white shadow-lg rounded-lg overflow-hidden w-[200px]">
+                {/* Link zur Detailseite für jedes Rezept */}
+                <Link to={`/${recipe.id}`} className='text-m font-semibold break-words bg-gray-800 text-white block'>
+                  {recipe.name}
+                  {/* Bild des Rezepts */}
+                  <img src={recipe.image} alt={recipe.name} className="w-full h-[150px] object-cover" />
+                </Link>
+              </div>
             </li>
           ))}
         </ul>
       </div>
     </div>
-  )
+  );
 }
