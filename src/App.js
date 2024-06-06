@@ -1,12 +1,16 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
-import Header from './components/header/Header';
+
+import { Route, Routes } from 'react-router-dom';
+
 import Footer from './components/footer/Footer';
+import Header from './components/header/Header';
 import Main from './components/main/Main';
 import RecipeDetail from './components/recipe/RecipeDetail';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   return (
+    <ThemeProvider>
     <div className="flex flex-col h-screen">
       <Header />
       <Routes>
@@ -15,6 +19,7 @@ function App() {
       </Routes>
       <Footer />
     </div>
+    </ThemeProvider>
   );
 }
 
