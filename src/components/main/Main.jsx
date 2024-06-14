@@ -34,7 +34,7 @@ export default function Main() {
             <li className='m-4' key={recipe.id}>
               <div className="bg-white shadow-lg rounded-lg overflow-hidden w-[200px]">
                 {/* Link zur Detailseite für jedes Rezept */}
-                <Link to={`/${recipe.id}`} className='text-m font-semibold break-words bg-gray-800 text-white block'>
+                <Link to={`/${recipe.id}`} className='text-m font-semibold break-words bg-gray-800 text-white block pl-1'>
                   {recipe.name}
                   {/* Bild des Rezepts */}
                   <img src={recipe.image} alt={recipe.name} className="w-full h-[150px] object-cover" />
